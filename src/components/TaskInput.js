@@ -25,6 +25,7 @@ const TaskInput = () => {
         placeholder="Enter task"
         value={taskText}
         onChange={handleInputChange}
+        className="task-input"
       />
       <button type="submit">Add Task</button>
     </form>

@@ -41,6 +41,7 @@ const TaskList = () => {
               type="text"
               value={editedTaskText}
               onChange={(e) => setEditedTaskText(e.target.value)}
+              className="task-text"
               autoFocus
             />
           ) : (
