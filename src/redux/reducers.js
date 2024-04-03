@@ -1,4 +1,6 @@
-import { ADD_TASK, DELETE_TASK } from "./actions";
+// reducers.js
+
+import { ADD_TASK, DELETE_TASK, TOGGLE_TASK } from "./actions";
 
 const initialState = {
   tasks: [],
@@ -15,6 +17,15 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         tasks: state.tasks.filter((task) => task.id !== action.payload),
+      };
+    case TOGGLE_TASK: // Handle the TOGGLE_TASK action
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload
+            ? { ...task, completed: !task.completed }
+            : task
+        ),
       };
     default:
       return state;
