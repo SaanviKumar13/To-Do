@@ -1,5 +1,3 @@
-// reducers.js
-
 import { ADD_TASK, DELETE_TASK, TOGGLE_TASK } from "./actions";
 
 const initialState = {
@@ -18,7 +16,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         tasks: state.tasks.filter((task) => task.id !== action.payload),
       };
-    case TOGGLE_TASK: // Handle the TOGGLE_TASK action
+    case TOGGLE_TASK:
       return {
         ...state,
         tasks: state.tasks.map((task) =>
